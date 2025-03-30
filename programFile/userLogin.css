@@ -260,3 +260,8 @@ body {
   border-radius: 8px;
   outline: none;
 }
+
+/* to be deleted */
+#byPassLink {
+  color: aliceblue;
+}
