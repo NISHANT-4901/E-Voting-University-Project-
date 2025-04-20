@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Voting Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">E-Voting System</div>
+      <button class="result-btn" id="resultBtn">View Results</button>
+    </header>
+
+    <div class="voting-container">
+      <h2>Select Your Candidate</h2>
+      <div class="candidates-grid">
+        <div class="candidate" data-candidate="1">
+          <img src="IMAGE/userImage.jpg" alt="Candidate 1" />
+          <h3>Candidate 1</h3>
+          <p>Party A</p>
+        </div>
+        <div class="candidate" data-candidate="2">
+          <img src="IMAGE/userImage.jpg" alt="Candidate 2" />
+          <h3>Candidate 2</h3>
+          <p>Party B</p>
+        </div>
+        <div class="candidate" data-candidate="3">
+          <img src="IMAGE/userImage.jpg" alt="Candidate 3" />
+          <h3>Candidate 3</h3>
+          <p>Party C</p>
+        </div>
+        <div class="candidate" data-candidate="4">
+          <img src="IMAGE/userImage.jpg" alt="Candidate 4" />
+          <h3>Candidate 4</h3>
+          <p>Party D</p>
+        </div>
+      </div>
+      <div class="vote-button-container">
+        <button class="vote-btn" id="voteBtn" disabled>Submit Vote</button>
+      </div>
+    </div>
+
+    <!-- Result Modal -->
+    <div class="modal" id="resultModal">
+      <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>Election Results</h2>
+        <div class="result-content" id="resultContent">
+          <!-- Results will be displayed here -->
+        </div>
+      </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>
