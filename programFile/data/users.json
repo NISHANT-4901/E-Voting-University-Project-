@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "id": "1745248560042",
+      "name": "user",
+      "email": "user@gmail.com",
+      "password": "$2b$10$SgZ1DKYZfqCUHljH3421SeYnh0E.caCvFJVSAvGo..NtfZldtZdti",
+      "ageVerified": true,
+      "gender": "male",
+      "state": "uttar_pradesh"
+    },
+    {
+      "id": "1745249941058",
+      "name": "user1",
+      "email": "user1@gmail.com",
+      "password": "$2b$10$oOD4Z5cJTeqkOaz8bxbNgOWMQMTFFuieAzK0E80cJePkzqF8dKGFK",
+      "ageVerified": true,
+      "gender": "male",
+      "state": "uttar_pradesh"
+    },
+    {
+      "id": "1745251153128",
+      "name": "user2",
+      "email": "user2@gmail.com",
+      "password": "$2b$10$krx93mIKVpJeOe1x3qYWCuZ4QE6XjvhhZBet3x/w7zn.51LMC.CpO",
+      "ageVerified": true,
+      "gender": "male",
+      "state": "uttar_pradesh"
+    }
+  ]
+}

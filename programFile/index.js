@@ -12,18 +12,20 @@ loginBtn.addEventListener("click", () => {
 });
 
 // Handle sign-up form submission
-const signUpForm = document.querySelector(".sign-up form");
+const signUpForm = document.getElementById("signupForm");
 signUpForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const formData = {
-    name: signUpForm.querySelector("input[type='text']").value,
-    email: signUpForm.querySelector("input[type='text']:nth-child(2)").value,
-    password: signUpForm.querySelector("input[type='password']").value,
+    name: signUpForm.querySelector("[name='name']").value,
+    email: signUpForm.querySelector("[name='email']").value,
+    password: signUpForm.querySelector("[name='password']").value,
     ageVerified: document.getElementById("ageVerification").checked,
     gender: document.querySelector("input[name='gender']:checked").value,
     state: document.getElementById("state").value,
   };
+
+  console.log("Signup form data:", formData);
 
   try {
     const response = await fetch("http://localhost:5000/api/signup", {
@@ -35,33 +37,36 @@ signUpForm.addEventListener("submit", async (e) => {
     });
 
     const data = await response.json();
+    console.log("Signup response:", data);
 
     if (response.ok) {
       // Store token in localStorage
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", JSON.stringify(data.user));
 
-      // Redirect to dashboard or show success message
-      alert("Registration successful!");
-      // window.location.href = "/dashboard.html";
+      // Show success message and reload page
+      alert("Registration successful! Please login with your credentials.");
+      window.location.reload();
     } else {
       alert(data.message || "Registration failed");
     }
   } catch (error) {
-    console.error("Error:", error);
+    console.error("Signup error:", error);
     alert("An error occurred during registration");
   }
 });
 
 // Handle login form submission
-const signInForm = document.querySelector(".sign-in form");
+const signInForm = document.getElementById("loginForm");
 signInForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const formData = {
-    email: signInForm.querySelector("input[type='text']").value,
-    password: signInForm.querySelector("input[type='password']").value,
+    email: signInForm.querySelector("[name='email']").value,
+    password: signInForm.querySelector("[name='password']").value,
   };
+
+  console.log("Login form data:", formData);
 
   try {
     const response = await fetch("http://localhost:5000/api/login", {
@@ -73,20 +78,21 @@ signInForm.addEventListener("submit", async (e) => {
     });
 
     const data = await response.json();
+    console.log("Login response:", data);
 
     if (response.ok) {
       // Store token in localStorage
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", JSON.stringify(data.user));
 
-      // Redirect to dashboard or show success message
-      alert("Login successful!");
-      // window.location.href = "/dashboard.html";
+      // Show success message and redirect to dashboard
+      alert("Login successful! You will be redirected to the dashboard.");
+      window.location.href = "/dashboard";
     } else {
       alert(data.message || "Login failed");
     }
   } catch (error) {
-    console.error("Error:", error);
+    console.error("Login error:", error);
     alert("An error occurred during login");
   }
 });
