@@ -26,6 +26,15 @@
       "ageVerified": true,
       "gender": "male",
       "state": "uttar_pradesh"
+    },
+    {
+      "id": "1745252279118",
+      "name": "user3",
+      "email": "user3@gmail.com",
+      "password": "$2b$10$ih1UmiWPjU3U4PCfCNKrIe2nHEdSHp3jJsc9Hqxb8VxHaUMShBXgi",
+      "ageVerified": true,
+      "gender": "male",
+      "state": "uttar_pradesh"
     }
   ]
 }
